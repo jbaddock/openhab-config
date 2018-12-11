@@ -1,0 +1,62 @@
+sitemap home label="Our SmartHome" {
+
+Frame {
+        Text item=Today label="Weather & Astro [%1$tA,  %1$tY-%1$tm-%1$td,  %1$tH:%1$tM]" icon="sun_clouds" {
+            Frame label="Now..." {
+                //Switch item=Night_State label="Daytime" mappings=[OFF="Tag", ON="night"]
+                Text item=Day_Phase icon="sunmoon"
+                Text item=Sunrise_Time icon="sunrise" visibility=[Night_State == ON]
+                Text item=Sunset_Time icon="sunset" visibility=[Night_State == OFF]
+                Text item=Sun_Elevation icon="sunmoon" visibility=[Sun_Elevation > 0]
+                Text item=Moon_Elevation icon="sunmoon" visibility=[Moon_Elevation > 0]
+                Text item=Zodiac_Sign icon="zodiac"
+                Text item=Moon_Phase
+                Text item=Moon_Next_Full icon="fullmoon"
+                    visibility=[Moon_Phase == WAXING_CRESCENT,
+                        Moon_Phase == FIRST_QUARTER,
+                        Moon_Phase == WAXING_GIBBOUS,
+                        Moon_Phase == FULL]
+                Text item=Moon_Next_New icon="fullmoon"
+                    visibility=[Moon_Phase == WANING_GIBBOUS,
+                        Moon_Phase == THIRD_QUARTER,
+                        Moon_Phase == WANING_CRESCENT,
+                        Moon_Phase == NEW]
+            }
+            Frame label="Weather Forecast"{
+                Text label="Comes later..." icon="sun_clouds"
+            }
+        }
+    }
+
+  Frame label="House Stuff"
+    {
+      Switch item=DOOR_GARAGE_OS_CONTACT icon=lock
+      Switch item=DOOR_GARAGE_OS_CONTACT icon=switch
+      Switch item=DOOR_GARAGE_INSIDE_CONTACT icon=lock
+      Switch item=DOOR_GARAGE_INSIDE_CONTACT icon=switch
+      Switch item=DOOR_F_LOCK icon=lock
+      
+      Switch item=Alexa_LIGHTS_Garage icon=light
+      Switch item=Alexa_LIGHTS_OSf icon=light
+      Switch item=Alexa_PSWITCH_GARAGE_OHDOOR icon=poweroutlet
+      Text item=SENSOR_GARAGE_TEMP icon=temperature
+      Text item=SENSOR_BASEMENT_TEMP icon=temperature
+      
+      Text item=Bedrooms label="Bedrooms" icon=bedroom {
+        Frame label="Rooms" {
+          Switch item=Alexa_LIGHTS_MASTERBDRM
+          Slider item=Alexa_LIGHTS_MASTERBDRM
+        }
+      }
+    }
+Frame {
+        Text item=Maintenance label="Maintenance" icon="oil" {
+            Frame label="Battery Levels" {
+                      Text item=DOOR_GARAGE_INSIDE_BATTERY icon=batterylevel
+                      Text item=DOOR_GARAGE_OS_BATTERY icon=batterylevel
+                      Text item=DOOR_F_BATTERY icon=batterylevel
+            }
+
+        }
+    }
+}

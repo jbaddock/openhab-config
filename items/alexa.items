@@ -1,0 +1,20 @@
+
+//This is the Items File
+
+//Lights
+Switch  Alexa_LIGHTS_OSf            "Outdoor Lights"              (Alexa) ["Lighting"]    {channel="zwave:device:512:node9:switch_binary"}
+Switch  Alexa_LIGHTS_Garage         "Garage Lights"               (Alexa) ["Lighting"]    {channel="zwave:device:512:node5:switch_binary"}
+
+Dimmer  Alexa_LIGHTS_MASTERBDRM     "Bedroom Lights"              (Alexa) ["Lighting"]    {channel="zwave:device:512:node22:switch_dimmer"} 
+Dimmer  Alexa_LIGHTS_MASTERBDRM     "Master Bedroom Lights"       (Alexa) ["Lighting"]    {channel="zwave:device:512:node22:switch_dimmer"} 
+Dimmer  Alexa_LIGHTS_MASTERBDRM     "My Bedroom Lights"           (Alexa) ["Lighting"]    {channel="zwave:device:512:node22:switch_dimmer"} 
+Number  Alexa_LIGHTS_MASTERBDRM_LVL "Bedroom Light Dimmer"        (Alexa) ["Lighting"]    {channel="zwave:device:512:node22:scene_number"}
+Number  Alexa_LIGHTS_MASTERBDRM_LVL "Master Bedroom Light Dimmer" (Alexa) ["Lighting"]    {channel="zwave:device:512:node22:scene_number"}
+
+
+
+//Garage Door Opener Power Outlett
+Switch  Alexa_PSWITCH_GARAGE_OHDOOR "Garage Door Power"           (Alexa) ["Switchable"]  {channel="zwave:device:512:node10:switch_binary"}
+
+
+

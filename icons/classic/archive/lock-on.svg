@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<svg width="30" height="42.860001" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <metadata id="metadata14">image/svg+xml</metadata>
+
+ <g class="layer">
+  <title>Layer 1</title>
+  <path d="m25,17.45l0,-5.45c0,-5.52 -4.48,-10 -10,-10c-5.52,0 -10,4.48 -10,10l0,12.73" fill="none" id="path2" stroke="#b4b4b4" stroke-miterlimit="10" stroke-width="4"/>
+  <path d="m0.5,17.36l29,0l0,25l-29,0l0,-25z" fill="#cccccc" id="path4"/>
+  <path d="m29,17.86l0,24l-28,0l0,-24l28,0m1,-1l-1,0l-28,0l-1,0l0,1l0,24l0,1l1,0l28,0l1,0l0,-1l0,-24l0,-1z" fill="#999999" id="path6"/>
+ </g>
+</svg>

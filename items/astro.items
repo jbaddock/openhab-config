@@ -1,0 +1,29 @@
+Group Astro <sun_clouds> (Whg)
+
+//
+DateTime    Current_DateTime     "Today [%1$tA, %1$tY-%1$tm-%1$td]"                       <clock>   (Astro) {channel="ntp:ntp:local:dateTime"}
+//
+DateTime    Sunset_Time          "Sunset_Time [%1$tH:%1$tM Uhr]"                           <sun>    (Astro) {channel="astro:sun:local:set#start"}
+DateTime    Sunrise_Time         "Sunrise [%1$tH:%1$tM Uhr]"                               <sun>    (Astro) {channel="astro:sun:local:rise#end"}
+DateTime    Evening_Time         "Evening [%1$tH:%1$tM Uhr]"                                        (Astro) {channel="astro:sun:minus90:set#start"}
+//
+String      Day_Phase            "Day_Phase [MAP(astro.map):%s]"                                    (Astro) {channel="astro:sun:local:phase#name"}
+Switch      Night_State          "Night"                                                             (Astro)
+//
+String      Season_Name          "Season [MAP(astro.map):%s]"                                       (Astro) {channel="astro:sun:local:season#name"}
+String      Zodiac_Sign          "Zodiac [MAP(astro.map):%s]"                              <zodiac> (Astro) {channel="astro:sun:local:zodiac#sign"}
+Number      Sun_Elevation        "Sun Elevation [%.1f °]"                                  <sun>    (Astro) {channel="astro:sun:local:position#elevation"}
+Number      Moon_Elevation       "Moon Elevation [%.1f °]"                                 <moon>   (Astro) {channel="astro:moon:local:position#elevation"}
+String      Moon_Phase           "Moon phase [MAP(astro.map):%s]"                          <moon>   (Astro) {channel="astro:moon:local:phase#name"}
+DateTime    Moon_Next_Full       "Full Moon [%1$tY-%1$tm-%1$td, %1$tH:%1$tM]"              <moon>   (Astro) {channel="astro:moon:local:phase#full"}
+DateTime    Moon_Next_New        "New Moon [%1$tY-%1$tm-%1$td, %1$tH:%1$tM]"               <moon>   (Astro) {channel="astro:moon:local:phase#new"}
+
+//
+Number      Radiation_Direct     "Direct Radiation"                                                 (Astro) {channel="astro:sun:local:radiation#direct"}
+Number      Radiation_Total      "Total Radiation"                                                  (Astro) {channel="astro:sun:local:radiation#total"}
+Number      Radiation_Diffuse    "Diffuse Radiation"                                                (Astro) {channel="astro:sun:local:radiation#diffuse"}
+
+//
+//String      Time_Of_Day          "Current Time of Day [%s]"                                         (Astro)
+
+// vim: syntax=Xtend

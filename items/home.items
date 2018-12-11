@@ -1,0 +1,75 @@
+
+//This is the Items File
+
+// Front Door Lock
+Switch    DOOR_F_LOCK               "Front Door Lock"                       {channel="zwave:device:512:node33:lock_door"}
+Contact   DOOR_F_ALARM              "Front Door Alarm"                      {channel="zwave:device:512:node33:alarm_general"}
+Number    DOOR_F_BATTERY            "Front Door Battery [%d %%]"           {channel="zwave:device:512:node33:battery-level" }   //e.g. "50 %"
+
+
+// Electric Meter Items
+Number    PMETER_MAIN_AMPS          "Electric Meter Amps"                  {channel="zwave:device:512:node2:meter_current"}
+Number    PMETER_MAIN_WATTS         "Electric Meter Watts"                 {channel="zwave:device:512:node2:meter_watts"}
+Number    PMETER_MAIN_KWH           "Electric Meter kWh"                   {channel="zwave:device:512:node2:meter_kwh"}
+Number    PMETER_MAIN_VOLTS         "Electric Meter Volts"                 {channel="zwave:device:512:node2:meter_voltage"}
+Switch    PMETER_MAIN_RESET         "Electric Meter Reset"                 {channel="zwave:device:512:node2:meter_reset"}
+
+// Garage Motion Sensor
+Contact   SENSOR_GARAGE_MOTION      "Garage Sensor Tripped"                 {channel="zwave:device:512:node23:sensor_binary"}
+Number    SENSOR_GARAGE_HUMIDITY    "Garage Sensor Humidity [%d %%]"        {channel="zwave:device:512:node23:sensor_relhumidity"}
+Number    SENSOR_GARAGE_ULTRAVIOLET "Garage Sensor Ultraviolet"             {channel="zwave:device:512:node23:sensor_ultraviolet"}
+Number    SENSOR_GARAGE_TEMP        "Garage Temperature [%.1f °C]"   {channel="zwave:device:512:node23:sensor_temperature"}
+Number    SENSOR_GARAGE_LUMS        "Garage Sensor Luminance"               {channel="zwave:device:512:node23:sensor_luminance"}
+Contact   SENSOR_GARAGE_TAMPER      "Garage Sensor Tamper"                  {channel="zwave:device:512:node23:alarm_general"}
+// Not used Number SENSOR_GARAGE_BATTERY "Garage Sensor Battery [%d %%]" {channel="zwave:device:512:node7:sensor_battery"}
+
+//Basement Motion Sensor
+Contact   SENSOR_BASEMENT_MOTION    "Basement Sensor Tripped"                 {channel="zwave:device:512:node29:sensor_binary"}
+Number    SENSOR_BASEMENT_HUMIDITY  "Basement Sensor Humidity [%d %%]"        {channel="zwave:device:512:node29:sensor_relhumidity"}
+Number    SENSOR_BASEMENT_ULTRAVIOLET "Basement Sensor Ultraviolet" {channel="zwave:device:512:node29:sensor_ultraviolet"}
+Number    SENSOR_BASEMENT_TEMP "Basement Temperature [%.1f °C]" {channel="zwave:device:512:node29:sensor_temperature"}
+Number    SENSOR_BASEMENT_LUMS "Basement Sensor Luminance" {channel="zwave:device:512:node29:sensor_luminance"}
+Contact   SENSOR_BASEMENT_TAMPER "Basement Sensor Tamper" {channel="zwave:device:512:node29:alarm_general"}
+// Not used Number SENSOR_BASEMENT_BATTERY "Basement Sensor Battery [%d %%]" {channel="zwave:device:512:node7:sensor_battery"}
+
+
+//Light Switch Front Door Outside
+//Switch LSWITCH_FRONT_OUTSIDE_LIGHTS "Outside Front Lights" {channel="zwave:device:512:node9:switch_binary"}
+Number LSWITCH_FRONT_OUTSIDE_SCENE_ "Outside Front Lights Scene" {channel="zwave:device:512:node9:scene_number"}
+
+//Light Switch Garage
+//Switch LSWITCH_GARAGE_LIGHTS "Garage Lights" {channel="zwave:device:512:node5:switch_binary"}
+Number LSWITCH_GARAGE_LIGHTS_SCENE "Garage Lights Scene" {channel="zwave:device:512:node5:scene_number"}
+
+// Light Dimmer Master Bedroom
+//Dimmer LSWITCH_MASTERBDRM_LIGHTS "Master Bedroom Lights" {channel="zwave:device:512:node22:switch_dimmer"} 
+//Number LSWITCH_MASTERBDRM_LIGHTS_SCENE "Master Bedroom Lights Scene" {channel="zwave:device:512:node22:scene_number"}
+
+
+/////  Garage //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Switch Garage Exterior Door
+Contact DOOR_GARAGE_OS_CONTACT "Outside Garage Door Contact" {channel="zwave:device:512:node14:sensor_door"}
+Contact DOOR_GARAGE_OS_ALARM "Outside Garage Door Alarm" {channel="zwave:device:512:node14:alarm_general"}
+Number DOOR_GARAGE_OS_BATTERY "Outside Garage Door Battery [%d %%]" {channel="zwave:device:512:node14:battery-level" }   //e.g. "50 %"
+
+// Switch Garage Interior Door
+Contact DOOR_GARAGE_INSIDE_CONTACT "Inside Garage Door Contact" {channel="zwave:device:512:node13:sensor_door"}
+Contact DOOR_GARAGE_INSIDE_ALARM "Inside Garage Door Alarm" {channel="zwave:device:512:node13:alarm_general"}
+Number DOOR_GARAGE_INSIDE_BATTERY "Inside Garage Door Battery [%d %%]" {channel="zwave:device:512:node13:battery-level" }
+
+// Switch Garage Overhead DOOR
+Contact DOOR_GARAGE_OH_CONTACT "Overhead Garage Door Contact" {channel="zwave:device:512:node11:sensor_door"}
+Contact DOOR_GARAGE_OH_ALARM "Overhead Garage Door Alarm" {channel="zwave:device:512:node11:alarm_general"}
+Number DOOR_GARAGE_OH_BATTERY "Overhead Garage Door Battery" {channel="zwave:device:512:node11:battery-level"}
+
+// Quad Mote
+//Number WM01_SCENE "WM01 Scene" {channel="zwave:device:512:node19:scene_number"}
+//Number WM01_SCENE1 "WM01 Scene 1" {channel="zwave:device:512:node19:scene_number1"}
+Number WM01_SCENE2 "WM01 Scene 2" {channel="zwave:device:512:node19:scene_number2"}
+Number WM01_SCENE3 "WM01 Scene 3" {channel="zwave:device:512:node19:scene_number3"}
+Number WM01_SCENE4 "WM01 Scene 4" {channel="zwave:device:512:node19:scene_number4"}
+
+Number QUAD_MOTE_BATTERY "Quad Mote Battery [%d %%]" {channel="zwave:device:512:node19:battery-level" }   //e.g. "50 %"
+Contact ALARM_QUAD_MOTE "Quad Mote Power Alarm" {channel="zwave:device:512:node19:alarm_power"}
+

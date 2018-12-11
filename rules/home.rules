@@ -1,0 +1,16 @@
+// My Home Rules
+
+rule	"WallMote01Control"
+  when
+    Item WM01_Scene received update
+      then
+        if (WM01_Scene.state == 1.0) {
+          LSWITCH_MASTERBDRM_LIGHTS.sendCommand(ON)
+//          sendCommand(LSWITCH_MASTERBDRM_LIGHTS, ON)
+          }
+        if (WM01_Scene.state == 2.0) {
+          LSWITCH_MASTERBDRM_LIGHTS.sendCommand(ON)
+//          sendCommand(LSWITCH_MASTERBDRM_LIGHTS, OFF)
+//         StudyLightsDimmer.sendCommand(0)
+          }
+end
